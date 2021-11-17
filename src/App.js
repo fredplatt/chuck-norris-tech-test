@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import EmailInput from "./components/EmailInput";
+import Joke from "./components/Joke";
+import EmailSender from "./functions/EmailSender";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [joke, setJoke] = useState('')
+
+  const handleSend = (emails) => {
+    EmailSender(emails, joke)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Chuck Norris is no joke.</h1>
+      <Joke currentJoke={setJoke} />
+      <EmailInput handleSend={handleSend} />
     </div>
   );
 }
