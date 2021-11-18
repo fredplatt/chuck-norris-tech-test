@@ -3,12 +3,11 @@ body {
     background-size: cover;
     background-color: #111111;
     background-repeat: no-repeat;
-    margin: 20px;
-
 }
 
 .App {
     font-family: fantasy;
     color: #ededed;
     font-size: 1.2rem;
+    margin: 20px;
 }
